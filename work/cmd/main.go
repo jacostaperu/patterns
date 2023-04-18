@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/jacostaperu/patterns/worker"
+	"github.com/jacostaperu/patterns/work"
 )
 
 // names provides a set of names to display.
@@ -33,7 +33,7 @@ func (m *namePrinter) Task() {
 // main is the entry point for all Go programs.
 func main() {
 	// Create a work pool with 2 goroutines.
-	p := worker.New(2)
+	p := work.New(2)
 
 	var wg sync.WaitGroup
 	wg.Add(100 * len(names))
